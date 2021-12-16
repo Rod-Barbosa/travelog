@@ -36,55 +36,68 @@ After this Challenge I should be able to Code/Understand:
 
 ### Links
 
-- Solution Github URL: [https://github.com/Rod-Barbosa/momentumClone](https://github.com/Rod-Barbosa/momentumClone)
-- Live Site URL: no live site for chrome extension, jsut download the repo and install on your browser
-
+- Solution Github URL: [https://github.com/Rod-Barbosa/travelog](https://github.com/Rod-Barbosa/travelog)
+- Live Site URL: [https://rodrigo-travel-log.netlify.app/](https://rodrigo-travel-log.netlify.app/)
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
+- React
+- Figma
 - JavaScript
-- Chrome Dev Tools
+- JSON
 
 ### What I learned
 
-This makes the background walways pretty
-```css
-body {
-    background: no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+There is no easy way of mimicking last-child CSS sudo-class in React.
+I tried conditional rendering.. but it would mean passing so many extra props to hide one line ... I went with just leaving the line there and moving on. Pixel perfect is the enemy of perfect.
+
+```React
+<hr className="trips--border-bottom" />
+```
+Combined with:
+```CSS
+.trips--border-bottom{
+    border: .1px solid #F5F5F5;
+    /* width: 80%; */
+    margin: 0 2.5em;
 }
 ```
 
-Making letters easier to read on a picture background
-```css
-{
-    text-shadow: 0px 0px 20px #aaaaaa;
-    text-shadow: 1px 1px 2px #474747;
-}
-```
+The map function may seem too big, but readability is much better than using the {...trip} spread object for destructuring construction. No wonder my preferences is towards human readability.
 
-To work with view hight without running into margins forcing scrolling
-```css
-* {
-    box-sizing: border-box;
-}  
+```React
+    const tripsArr = tripsData.map((trip, counter)=>
+
+        <Trips 
+            key={counter}
+            title={trip.title}
+            location={trip.location}
+            googleMapsUrl={trip.googleMapsUrl}
+            startDate={trip.startDate}
+            endDate={trip.endDate}
+            description={trip.description}
+            imageUrl={trip.imageUrl}
+            jpegImage={trip.jpegImage}
+        />
+    )
+
+    return (
+        <div className="container">
+            <Navbar />
+            {tripsArr}
+        </div>
 ```
 
 ### Continued development
 
-This could go 1000 different directions, but just adding stuff to the screen seems counter productive to a tab extension that is supposed to free your mind from being bombarded by too much information
+Fetching hte unsplash API is a low hanging fruit for this project. That would make the travelog more interactive. Until then, it is nice hte way it is
 
 ### Useful resources
 
-- [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API#getting_the_current_position) - Specially cool to use the lon and lat params
-- [Javascript Clock Updated every second](https://stackoverflow.com/questions/39418405/making-a-live-clock-in-javascript) - setInterval(function, 1000) saves the day once again
-- [Crypto API](https://www.coingecko.com/en/api/documentation) - Coingecko seems overloaded and slow, but it gets the job done
+- [Original Figma file](https://www.figma.com/file/QG4cOExkdbIbhSfWJhs2gs/Travel-Journal?node-id=0%3A1) - It isn't pixel perfect, which is actually better than pixel perfect
+- [Pixlr for getting logo on the right color](https://pixlr.com/br/x/) -Suck it photoshop
+- [For the pictures](https://unsplash.com/photos/JmuyB_LibRo) - I could have consumed the API with fetch, but setting up the life struckture was more challenging
 
 ## Author
 
