@@ -1,6 +1,6 @@
-# Scrimba Frontend Career Path - (Momentum Chrome Extension - Module 07)
+# Scrimba Frontend Career Path - (Personal Project 2/Travel Log - Module 11)
 
-This is a solution to the [Scrimba Frontend Career Path - (Module07-APIs/Game of War)](https://scrimba.com/learn/frontend).
+This is a solution to the [Scrimba Frontend Career Path - (Module11-React/Personal Project)](https://scrimba.com/learn/frontend).
 
 ## Table of contents
 
@@ -21,21 +21,18 @@ This is a solution to the [Scrimba Frontend Career Path - (Module07-APIs/Game of
 
 ### The challenge
 
-Clone of the famous chrome extension "momentum"
+Create a react page that passes props and consumes JSON data, following a figma file and without any instructor guidance
 
 After this Challenge I should be able to Code/Understand:
 
-- Clients/Servers
-- Requests/Response
+- Figma files
+- React
 - JSON
-- fetch/.then()
-- Requests(methods, headers, body, URL)
-- REST API Design (params, query)
-- Async Javascript (callbacks, promises, async/await)
+- React props
 
 ### Screenshot
 
-![](./imagem.png)
+![](./solution.png)
 
 ### Links
 
